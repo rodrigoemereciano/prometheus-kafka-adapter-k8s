@@ -1,13 +1,17 @@
-Lab for validation manifest k8s prometheus-kafka-adapter:
+## Laboratory for validating prometheus-kafka-adapter k8s manifests:
+</br>
 
-Stack with these components:
+### The Stack with these components:
 
 - Prometheus
 - Prometheus-kafka-adapter
 - Zookeeper
 - Kafka
 
+</br>
 
-Architecture:
+### Architecture:
 
-prometheus --> prometheus-kafka-adapter --> kafka-adapter
+prometheus &#8594; prometheus-kafka-adapter &#8594; kafka-adapter
+
+Observation: I'm using metal-lb load balancer as a service and kind for creation cluster local
