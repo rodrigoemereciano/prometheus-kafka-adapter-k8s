@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: lab
+  name: kafka-adapter-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-adapter
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: kafka-adapter
+    spec:
+      containers:
+      - name: kafka-adapter
+        image: telefonica/prometheus-kafka-adapter:1.8.0
+        env:
+        - name: KAFKA_BROKER_LIST
+          value: "kafka-service:9092"
+        - name: PORT
+          value: "8080"
+        - name: KAFKA_TOPIC
+          value: confiabilidade
+        ports:
+        - containerPort: 8080
+          name: kafka-adapter

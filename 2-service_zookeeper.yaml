@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zookeeper-service
+  namespace: lab
+  labels:
+    app: zookeeper
+spec:
+  selector:
+    app: zookeeper
+  type: LoadBalancer
+  ports:
+    - name: zookeeper
+      port: 2181
+      targetPort: zookeeper
+    - name: zookeeper02
+      port: 2888
+      targetPort: zookeeper02
+    - name: zookeeper03
+      port: 3888
+      targetPort: zookeeper03

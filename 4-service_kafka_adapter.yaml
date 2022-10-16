@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-adapter-service
+  namespace: lab
+  labels:
+    app: kafka-adapter
+spec:
+  selector:
+    app: kafka-adapter
+  type: LoadBalancer
+  ports:
+    - name: kafka-adapter
+      port: 8080
+      targetPort: kafka-adapter
