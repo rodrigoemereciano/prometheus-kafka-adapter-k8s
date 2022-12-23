@@ -12,6 +12,6 @@
 
 ### Architecture:
 
-prometheus &#8594; prometheus-kafka-adapter &#8594; kafka-adapter
+prometheus &#8594; prometheus-kafka-adapter &#8594; kafka
 
 Observation: I'm using metal-lb load balancer as a service and kind for creation cluster local
